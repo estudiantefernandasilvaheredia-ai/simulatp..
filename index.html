@@ -400,7 +400,7 @@
     // CONEXIÓN CON EL SERVICIO (Apps Script)
     // Pega aquí la URL de tu implementación de Apps Script (termina en /exec).
     // ===================================================================
-    const URL_SERVICIO = "Phttps://script.google.com/a/macros/cslb.cl/s/AKfycbwjMN7UiAHfyWBdHqv2wAg3tF14ufWQ2Cs5E1L42QSDGQDQBoGjxT7BDFhU4-Z2UJzurw/exec";
+    const URL_SERVICIO = "https://script.google.com/macros/s/AKfycbxI9_e6sAlkKDKWfV45_Y2QLdS3RI9NB2uEep4g0ypISa08eozNw8yxhgGk8-25Mi5dFg/exec";
 
     // Forma corta de la URL (sin /a/macros/dominio): suele funcionar mejor desde otros sitios.
     const URL_CORTA = URL_SERVICIO.replace(/\/a\/macros\/[^\/]+\/s\//, "/macros/s/");
@@ -408,7 +408,7 @@
 
     // Llama al servicio. Devuelve una promesa con el JSON de respuesta o lanza Error con un motivo legible.
     function llamarServicio(datos) {
-      if (!URL_SERVICIO || URL_SERVICIO.indexOf("https://script.google.com/a/macros/cslb.cl/s/AKfycbwjMN7UiAHfyWBdHqv2wAg3tF14ufWQ2Cs5E1L42QSDGQDQBoGjxT7BDFhU4-Z2UJzurw/exec") === 0) {
+      if (!URL_SERVICIO || URL_SERVICIO.indexOf("https://script.google.com/macros/s/AKfycbxI9_e6sAlkKDKWfV45_Y2QLdS3RI9NB2uEep4g0ypISa08eozNw8yxhgGk8-25Mi5dFg/exec") === 0) {
         return Promise.reject(new Error("Falta configurar URL_SERVICIO en el HTML."));
       }
       const codigoEl = document.getElementById("codigoClase");
@@ -465,7 +465,7 @@
     function verificarServicio() {
       const el = document.getElementById("estadoServicio");
       if (!el) return;
-      if (!URL_SERVICIO || URL_SERVICIO.indexOf("https://script.google.com/a/macros/cslb.cl/s/AKfycbwjMN7UiAHfyWBdHqv2wAg3tF14ufWQ2Cs5E1L42QSDGQDQBoGjxT7BDFhU4-Z2UJzurw/exec") === 0) {
+      if (!URL_SERVICIO || URL_SERVICIO.indexOf("https://script.google.com/macros/s/AKfycbxI9_e6sAlkKDKWfV45_Y2QLdS3RI9NB2uEep4g0ypISa08eozNw8yxhgGk8-25Mi5dFg/exec") === 0) {
         el.textContent = "⚠️ Servicio: falta pegar la URL de Apps Script en el HTML.";
         return;
       }
